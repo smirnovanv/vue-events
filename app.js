@@ -3,7 +3,17 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: '',
+      fullname: '',
     };
+  },
+  watch: {
+    counter(value) {
+      if (value > 50) {
+        setTimeout(() => {
+          this.counter = 0;
+        }, 2000);
+      }
+    },
   },
   computed: {
     fullname() {
